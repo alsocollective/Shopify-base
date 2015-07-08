@@ -1,4 +1,5 @@
 // https://www.npmjs.com/package/grunt-env
+var mozjpeg = require('imagemin-mozjpeg');
 
 module.exports = function(grunt) {
 	grunt.initConfig({
@@ -12,6 +13,7 @@ module.exports = function(grunt) {
 				theme: '<%= aws.theme %>'
 			}
 		},
+
 		sass: {
 			dist: {
 				files: [{
@@ -56,12 +58,34 @@ module.exports = function(grunt) {
 
 			}
 		},
-		env: {
-			dev: {
-				ENV_MODE: "REG",
-				src: "dev.json"
+
+		htmlmin: {
+			dist: {
+				options: {
+					removeComments: true,
+					collapseWhitespace: true,
+					useShortDoctype: true,
+					minifyJS: true,
+					minifyCSS: true,
+					removeCommentsFromCDATA: true
+				},
+				files: [{
+					expand: true,
+					// flatten: true,
+					cwd: "html/",
+					src: ['**/*.liquid'],
+					destination: '.' //,
+					// ext: '.html'
+				}]
 			}
 		},
+		// env: {
+		// 	dev: {
+		// 		ENV_MODE: "REG",
+		// 		src: "dev.json"
+		// 	}
+		// },
+
 		notify: {
 			options: {
 				enabled: true,
@@ -98,6 +122,10 @@ module.exports = function(grunt) {
 				files: 'assets/js/**/*.js',
 				tasks: ['uglify', 'notify:js']
 			},
+			html: {
+				files: ["html/**/*.liquid", "html/*.liquid"],
+				tasks: ["htmlmin"]
+			},
 			shopify: {
 				files: ['layout/*.liquid', 'templates/*.liquid', 'snippets/*.liquid', 'assets/*.css', 'assets/*.js', 'config/*.json', 'config/*.html'],
 				tasks: ['shopify', 'notify:watch']
@@ -111,5 +139,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-shopify');
 	grunt.loadNpmTasks('grunt-aws');
 	grunt.loadNpmTasks('grunt-notify');
+	grunt.loadNpmTasks('grunt-contrib-htmlmin');
+
+
 	grunt.registerTask('default', ['watch']);
 };
