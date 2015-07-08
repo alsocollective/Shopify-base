@@ -1,0 +1,112 @@
+[{
+	"name": "theme_info",
+	"settings": [{
+		"type": "header",
+		"content": "Good+Hec Shopify theme"
+	}]
+}, {
+	"name": "Index",
+	"settings": [{
+		"label": "About us Text",
+		"type": "textarea",
+		"id": "index-about"
+	}, {
+		"label": "About us subText",
+		"type": "textarea",
+		"id": "index-about-sub"
+	}, {
+		"label": "Body description",
+		"type": "textarea",
+		"id": "logo-body"
+	}, {
+		"label": "Mind description",
+		"type": "textarea",
+		"id": "logo-mind"
+	}, {
+		"label": "Urban description",
+		"type": "textarea",
+		"id": "logo-urban"
+	}]
+}, {
+	"name": "Footer",
+	"settings": [{
+			"label": "SignUp Popup text",
+			"type": "textarea",
+			"id": "stayintouch"
+		}, {
+			"label": "SignUp footer text",
+			"type": "textarea",
+			"id": "stayintouchfooter"
+		}
+
+	]
+}, {
+	"name": "Shipping",
+	"settings": [{
+		"label": "Canada Shipping",
+		"type": "textarea",
+		"id": "ship_can"
+	}, {
+		"label": "Canada Shipping RawCost",
+		"type": "textarea",
+		"id": "ship_can_num"
+	}, {
+		"label": "US Shipping",
+		"type": "textarea",
+		"id": "ship_us"
+	}, {
+		"label": "US Shipping RawCost",
+		"type": "textarea",
+		"id": "ship_us_num"
+	}, {
+		"label": "World Shipping",
+		"type": "textarea",
+		"id": "ship_world"
+	}, {
+		"label": "World Shipping RawCost",
+		"type": "textarea",
+		"id": "ship_world_num"
+	}, {
+		"label": "Text before free shipping Number",
+		"type": "textarea",
+		"id": "script_before"
+	}, {
+		"label": "Text after free shipping Number",
+		"type": "textarea",
+		"id": "script_after"
+	}]
+}, {
+	"name": "Pop ups",
+	"settings": [{
+			"label": "Current Popups tagged popup-current",
+			"type": "textarea",
+			"id": "popup-current"
+		}, {
+			"label": "Future Popups tagged popup-future",
+			"type": "textarea",
+			"id": "popup-future"
+		}
+
+	]
+}, {
+	"name": "Browse all",
+	"settings": [{
+		"label": "Order of browsall",
+		"type": "textarea",
+		"id": "borwseall-order"
+	}]
+}, {
+	"name": "Social media",
+	"settings": [{
+			"label": "To be includened in social media",
+			"type": "textarea",
+			"id": "social-twitter"
+		}
+		// , {
+		// 	"label": "To be includeded in facebook",
+		// 	"type": "textarea",
+		// 	"id": "social-facebook"
+		// }
+
+	]
+}]
